@@ -27,6 +27,8 @@ import android.webkit.WebView;
 
 public class AboutActivity extends Activity {
 
+    //pointless comment
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
