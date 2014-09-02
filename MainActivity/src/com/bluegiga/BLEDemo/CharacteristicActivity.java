@@ -173,6 +173,10 @@ public class CharacteristicActivity extends Activity {
                                     currRefreshInterval = 0;
                                     offset = 0;
                                     value = mBluetoothCharact.getValue();
+                                    byte o = (byte)0;
+                                    byte l = (byte)1;
+                                    byte[] value_test = {(byte)254, (byte)254};
+                                    //value = value_test;
                                     loadValueViews();
                                 }
                             }

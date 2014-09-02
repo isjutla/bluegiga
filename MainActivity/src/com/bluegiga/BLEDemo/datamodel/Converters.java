@@ -64,8 +64,14 @@ public class Converters {
         }
 
         String result = "";
-        for (byte b : value) {
-            result += ((int) b & 0xff) + " ";
+        //for (byte b : value) {
+        //    result += ((int) b & 0xff) + " ";
+        //}
+        
+        for (int i = 0; i < value.length; i = i + 2) {
+        	int a =  (int) (value[i] & 0xff);
+        	int b = ((int) (value[i+1]) & 0xff);
+            result += a + (b<<8)+ " ";
         }
         return result;
     }
