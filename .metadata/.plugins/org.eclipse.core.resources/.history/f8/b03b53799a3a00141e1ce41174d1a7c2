@@ -35,8 +35,7 @@ public class Converters {
             hexChars[j * 3 + 1] = hexArray[v & 0x0F];
             hexChars[j * 3 + 2] = ' ';
         }
-        return "";
-        //return new String(hexChars);
+        return new String(hexChars);
     }
 
     // Gets value in hexadecimal system for single byte
@@ -46,8 +45,7 @@ public class Converters {
         v = b & 0xFF;
         hexChars[0] = hexArray[v >>> 4];
         hexChars[1] = hexArray[v & 0x0F];
-        return "";
-        //return new String(hexChars);
+        return new String(hexChars);
     }
 
     // Gets value in ascii system
@@ -55,8 +53,8 @@ public class Converters {
         if (value == null) {
             return "";
         }
-        return "";
-        //return new String(value);
+
+        return new String(value);
     }
 
     // Gets value in decimal system
@@ -69,16 +67,14 @@ public class Converters {
         int j = 0;
         int old = 0;
         int knew = 0;
-        int flow = 0;
         for (byte b : value) {
             knew = ((int) b & 0xff);
-            if((knew & 128) > 0) {
-            	flow = (((knew & 7)<<7)  + (old));
-            	//flow = (flow - 530)/40;
-            	result += flow + " ";
+            if(j%2 == 1) {
+            	result += old + (knew<<8) + " ";
             }
             old = knew;
             j = j + 1;
+            }
         }
         
         //for (int i = 0; i < value.length; i = i + 2) {

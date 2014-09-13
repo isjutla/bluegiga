@@ -73,9 +73,7 @@ public class Converters {
         for (byte b : value) {
             knew = ((int) b & 0xff);
             if((knew & 128) > 0) {
-            	flow = (((knew & 7)<<7)  + (old));
-            	//flow = (flow - 530)/40;
-            	result += flow + " ";
+            	result += (((knew & 7)<<7)  + (old)) + " ";
             }
             old = knew;
             j = j + 1;
